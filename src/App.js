@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import Login from './components/Login.js'
+import Login from './components/Login.js';
+import {connect} from 'react-redux';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state =  {
-            loginSuccess: false,
-            username: ""
-        }
-        this.handleLogin = this.handleLogin.bind(this);
+        // this.state =  {
+        //     loginSuccess: false,
+        //     username: ""
+        // }
+        // this.handleLogin = this.handleLogin.bind(this);
     }
 
-    handleLogin(username, password) {
-        // simulating ajax call
-        if(username == 'shrutiB' && password == 'shruti') {
-            this.setState({
-                loginSuccess: true,
-                username: username
-            })
-        }
-    }
+    // handleLogin(username, password) {
+    //     simulating ajax call
+    //     if(username == 'shrutiB' && password == 'shruti') {
+    //         this.setState({
+    //             loginSuccess: true,
+    //             username: username
+    //         })
+    //     }
+    // }
 
   render() {
     return (
@@ -33,11 +33,16 @@ class App extends Component {
               <h1 className="App-title">Welcome to React + Redux</h1>
           </header>
 
-          { (!this.state.loginSuccess )? <Login handleLogin={this.handleLogin}></Login> : <p> you are logged in {this.state.username}</p> }
+          <Login/>
+
+          {/* { (!this.props.loginSuccess )? <Login/> : <p> you are logged in {this.props.username}</p> } */}
 
       </div>
     );
   }
 }
-
-export default App;
+function mapStateToProps() {
+    return {};
+}
+const connectedApp = connect(mapStateToProps)(App);
+export {connectedApp as App};

@@ -10,7 +10,7 @@ class Textbox extends Component {
         return (
             <div>
                 <input name={this.props.nameofinput} type={this.props.typeofinput} placeholder="Enter your info" onChange={this.props.handleOnChange}>
-
+                    
                 </input>
             </div>
         );

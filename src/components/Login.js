@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Textbox from './Textbox.js';
 import Button from './Button.js';
+import {userActions} from './actions';
+import {connect} from 'react-redux';
+
 
 class Login extends Component {
 
@@ -18,7 +21,10 @@ class Login extends Component {
         console.log("UserName: " + this.state.username);
         console.log("Passsword: " + this.state.password);
         // send data back to parent component
-        this.props.handleLogin(this.state.username, this.state.password);
+        // this.props.handleLogin(this.state.username, this.state.password);
+
+        // dispatch an action
+        this.props.dispatch.userActions.login(this.state.username, this.state.password);
     }
 
     handleOnChange (event) {
@@ -57,4 +63,8 @@ class Login extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {state.authentication};
+}
+const connectedApp = connect(mapStateToProps)(App);
 export default Login;
