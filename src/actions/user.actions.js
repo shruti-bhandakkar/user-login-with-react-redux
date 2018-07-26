@@ -1,6 +1,6 @@
-import userActions from './actionTypes';
+import userActions from '../actionTypes';
 
-handleLogin(username, password) {
+const handleLogin = (username, password) => {
     // simulating ajax call
     if(username == 'shrutiB' && password == 'shruti') {
         return {
@@ -11,16 +11,16 @@ handleLogin(username, password) {
     }
 }
 
-handleLogout() {
+const handleLogout = () => {
 
 }
 
-handleSignup(userObj) {
+const handleSignup = (userObj) => {
 
 }
 
-export const userActions = {
-    login: handleLogin,
-    logout: handleLogout,
-    signup: handleSignup
+export {
+     handleLogin,
+     handleLogout,
+     handleSignup
 }

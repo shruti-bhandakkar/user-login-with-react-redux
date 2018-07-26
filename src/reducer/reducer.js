@@ -1,13 +1,15 @@
-import userActions from './actionTypes';
+import userActions from '../actionTypes';
 
-const initialState = {};
-
-function authentication(state = initialState, action) {
+export const authentication = (state = {}, action) => {
     switch (action.type) {
         case userActions.LOGIN_SUCCESS:
             return {
                 login: true,
                 username: action.username
             }
+
+        default:
+            return state;
+
     }
 }

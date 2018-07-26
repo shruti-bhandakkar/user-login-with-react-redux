@@ -35,14 +35,16 @@ class App extends Component {
 
           <Login/>
 
-          {/* { (!this.props.loginSuccess )? <Login/> : <p> you are logged in {this.props.username}</p> } */}
+          
+          { (!this.props.loginSuccess )? <Login/> : <p> you are logged in {this.props.username}</p> }
+
 
       </div>
     );
   }
 }
-function mapStateToProps() {
-    return {};
+function mapStateToProps(state) {
+    return state;
 }
 const connectedApp = connect(mapStateToProps)(App);
 export {connectedApp as App};
