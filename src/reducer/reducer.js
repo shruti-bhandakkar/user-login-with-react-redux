@@ -1,8 +1,8 @@
-import userActions from '../actionTypes';
+import {userActionTypes} from '../actionTypes';
 
 export const authentication = (state = {}, action) => {
     switch (action.type) {
-        case userActions.LOGIN_SUCCESS:
+        case userActionTypes.LOGIN_SUCCESS:
             return {
                 login: true,
                 username: action.username

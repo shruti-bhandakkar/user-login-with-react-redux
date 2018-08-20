@@ -1,10 +1,11 @@
-import userActions from '../actionTypes';
+import {userActionTypes} from '../actionTypes';
 
 const handleLogin = (username, password) => {
+
     // simulating ajax call
-    if(username == 'shrutiB' && password == 'shruti') {
+    if(username === 'shrutiB' && password === 'shruti') {
         return {
-            type: userActions.LOGIN_SUCCESS,
+            type: userActionTypes.LOGIN_SUCCESS,
             loginSuccess: true,
             username: username
         }
